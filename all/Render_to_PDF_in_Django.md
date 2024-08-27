@@ -141,6 +141,18 @@ A guide to using an HTML template to create a PDF via a `render_to_pdf` utility 
             return HttpResponse("Not found")
     ```
 
+urls.py
+
+
+```
+from django.urls import path
+from .views import GeneratePdf, GeneratePDF
+
+urlpatterns = [
+    path('generate-pdf/', GeneratePdf.as_view(), name='generate_pdf'),
+    path('generate-pdf-download/', GeneratePDF.as_view(), name='generate_pdf_download'),
+]
+```
 
 ### Watch [here](https://www.codingforentrepreneurs.com/projects/render-pdf/)
 <iframe width="560" height="315" src="https://www.youtube.com/embed/B7EIK9yVtGY" frameborder="0" allowfullscreen></iframe>
